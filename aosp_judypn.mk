@@ -22,24 +22,21 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk
 # Inherit from judypn device
 $(call inherit-product, device/lge/judypn/device.mk)
 
-# Inherit some common PixelExperience stuff.
-TARGET_BOOT_ANIMATION_RES := 1440
-TARGET_GAPPS_ARCH := arm64
-TARGET_INCLUDE_STOCK_ARCORE := true
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+# Inherit some common DotOS stuff.
+$(call inherit-product, vendor/dot/config/common.mk)
 
 # Overlays (inherit after vendor/cm to ensure we override it)
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-# Bootanimation
+# Set Bootanimation Resolution
 TARGET_BOOT_ANIMATION_RES := 1440
 
-PRODUCT_ENFORCE_RRO_TARGETS := \
+#PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
 
 # Device identifiers
 
-PRODUCT_NAME := aosp_judypn
+PRODUCT_NAME := dot_judypn
 PRODUCT_DEVICE := judypn
 PRODUCT_BRAND := lge
 PRODUCT_MANUFACTURER := LGE
