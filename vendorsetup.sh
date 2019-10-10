@@ -1,0 +1,3 @@
+
+add_lunch_combo aosp_judypn-user
+add_lunch_combo aosp_judypn-userdebug
